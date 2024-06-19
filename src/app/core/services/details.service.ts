@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 export class DetailsService{
 
   constructor(private _HttpClient:HttpClient) { }
-  baseUrl:string = "http://localhost:8081"
+  baseUrl:string = "https://midcare-v1-0-5.onrender.com"
 
   displayEmergencyDetails(id:string|null):Observable<any>{
     return this._HttpClient.get(this.baseUrl + `/emergency/get?id=${id}`)
