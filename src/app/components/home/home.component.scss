@@ -1,0 +1,265 @@
+.button-donate {
+  position: relative;
+  display: inline-block;
+  padding: 12px 17px;
+  border-radius: 14px;
+  overflow: hidden;
+  z-index: 1;
+  border: 1px solid rgb(221, 218, 218);
+  background: white;
+  font-weight: bold;
+  font-size: 14px;
+  color: #1993e4;
+  transition: all 1.2s linear;
+  cursor: pointer;
+
+  &:after {
+    content: "";
+    position: absolute;
+    background: linear-gradient(to right, #1993e4, #1993e456);
+    border-radius: 30%;
+    height: 96px;
+    width: 96px;
+    animation: spin infinite linear 1.8s;
+    animation-delay: 0;
+    bottom: -38px;
+    right: -112px;
+    transition: all 1.2s linear;
+    z-index: 0;
+  }
+
+  &:hover {
+    color: #fff;
+    transition-duration: 1.2s;
+  }
+
+  &:hover:after {
+    right: -60px;
+    bottom: -92px;
+    width: 256px;
+    height: 256px;
+  }
+}
+
+
+
+.button-donate > .button-content {
+  position: relative;
+  z-index: 2;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+// 0000000000000000000000000000000
+
+.cta {
+  position: relative;
+  padding: 12px 18px;
+  transition: all 0.2s ease;
+  border: none;
+  background: none;
+  cursor: pointer;
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    border-radius: 50px;
+    background:#32ace0;
+    width: 45px;
+    height: 45px;
+    transition: all 0.3s ease;
+  }
+  &:hover:before {
+    width: 100%;
+    background:#32ace0;
+  }
+  &:hover svg {
+    transform: translateX(0);
+  }
+  &:active {
+    transform: scale(0.95);
+  }
+}
+.cta span {
+  position: relative;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: #fff;
+}
+
+.cta svg {
+  position: relative;
+  top: 0;
+  margin-left: 10px;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke: #fff;
+  stroke-width: 2;
+  transform: translateX(-5px);
+  transition: all 0.3s ease;
+}
+
+.home{
+  margin-top: 61px;
+  background-image: url('/assets/bg-main.jpg');
+  background-size: cover;
+  background-position:center ;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+}
+
+.inner{
+  min-height: 100vh;
+}
+.h2-title{
+  font-size: 28px;
+}
+.text-main{
+  font-size: 60px;
+  line-height: 1.2;
+  font-weight: 500;
+}
+.main-p{
+  font-size: 24px;
+  line-height: 1.5;
+  font-weight: 400;
+}
+.text{
+  font-weight: 600;
+}
+
+.About-c{
+  border-radius: 10px;
+  box-shadow: 0px 0px 30px 5px #0000000e;
+}
+
+.slider-img-container{
+  border-radius: 10px;
+  box-shadow: 0px 0px 30px 5px #0000000e;
+  background-color: #fff;
+  cursor: pointer;
+}
+.slider-img-container img{
+  height: 200px;
+  border-radius: 10px;
+}
+.hospital,.insight,.blog{
+  background-color: #eeeeee;
+}
+.slider-img-container-blog{
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0px 0px 30px 5px #0000000e;
+  cursor: pointer;
+}
+.slider-img-container-blog img{
+  height: 200px;
+  border-radius: 10px;
+}
+.slider-img-container-insight{
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0px 0px 30px 5px #0000000e;
+  cursor: pointer;
+
+}
+.slider-img-container-insight img{
+  height: 220px;
+  border-radius: 10px;
+}
+.carousel-img{
+  height: 420px;
+  border-radius: 15px;
+}
+.carousel-indicators .active{
+  background-color: #00b3ff !important;
+}
+.gallary-container{
+  background-color: #32ace0;
+  width: 65%;
+  border-radius: 15px;
+}
+.gallary-img{
+  border-radius: 15px;
+  height: 430px;
+}
+.category-info{
+  margin:8px 0;
+  padding:2px 7px;
+  border:1px solid #000;
+  border-radius:10px;
+  width:fit-content;
+  font-size:14px;
+}
+.date{
+  top: 25px;
+  right: 25px;
+}
+@media screen and (max-width: 1200px) {
+  .carousel-img{
+    height: 355px;
+  }
+  .slider-img-container img{
+    height: 180px;
+  }
+  .slider-img-container-insight img{
+    height: 180px;
+  }
+  .slider-img-container-blog img{
+    height: 180px;
+  }
+  .gallary-img{
+    height: 355px;
+  }
+}
+@media screen and (max-width: 992px) {
+  .carousel-img{
+    height: 265px;
+  }
+  .slider-img-container img{
+    height: 150px;
+  }
+  .slider-img-container-insight img{
+    height: 150px;
+  }
+  .slider-img-container-blog img{
+    height: 150px;
+  }
+  .gallary-img{
+    height: 265px;
+  }
+}
+@media screen and (max-width: 778px) {
+  .carousel-img{
+    height: 195px;
+  }
+  .slider-img-container img{
+    height: 130px;
+  }
+  .slider-img-container-blog img{
+    height: 150px;
+  }
+  .gallary-img{
+    height: 200px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .carousel-img{
+    height: 175px;
+  }
+  .gallary-img{
+    height: 180px;
+  }
+}

@@ -1,0 +1,31 @@
+
+.emergency{
+  margin-top: 61px;
+  padding: 20px 0;
+  background-color: #eeeeee;
+}
+.inner{
+  padding: 15px 10px;
+  background-color: #fff;
+  border-radius: 10px;
+  height: 100%;
+}
+.inner img{
+  max-height: 195px;
+  border-radius: 10px;
+}
+.discription-size{
+  font-size: 13px;
+}
+.input-container {
+  position: relative;
+  margin-bottom: 15px;
+}
+.input-icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 10px;
+  color: #000000;
+  font-size: 14px;
+}

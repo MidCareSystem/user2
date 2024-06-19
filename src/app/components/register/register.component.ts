@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { AuthService } from 'src/app/core/services/auth.service';
 
 @Component({
@@ -13,7 +13,10 @@ import { AuthService } from 'src/app/core/services/auth.service';
 })
 export class RegisterComponent {
 
-  constructor(private _AuthService:AuthService){}
+  constructor(private _AuthService:AuthService, private _Router:Router){}
+
+  exists:string = ''
+  isloading:boolean = false
 
   registerForm: FormGroup = new FormGroup({
     firstName: new FormControl(null, [Validators.required , Validators.minLength(3) , Validators.maxLength(20)]),
@@ -26,16 +29,22 @@ export class RegisterComponent {
 
   handleform():void{
     const userData = this.registerForm.value;
+    this.isloading = true
 
     if(this.registerForm.valid === true){
       this._AuthService.register(userData).subscribe({
         next: (response) =>{
           console.log(response);
 
+          this.isloading = false
+          this._Router.navigate(['/login']);
+
+
         },
         error:(err) =>{
           console.log(err);
-
+          this.isloading = false
+          this.exists= err.message
         }
       })
     }

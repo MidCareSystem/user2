@@ -1,3 +1,6 @@
+body{
+  background-color: #fff !important;
+}
 .btn-color{
   background-color: black;
   color: #fff;
@@ -6,11 +9,7 @@
     color: #fff;
   }
 }
-.form-control{
-  &:focus{
-    box-shadow: none;
-  }
-}
+
 .input-container {
   position: relative;
   margin-bottom: 15px;

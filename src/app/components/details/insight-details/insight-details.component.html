@@ -1,0 +1,57 @@
+<div class="container details">
+  <div class="row py-5">
+    <div class="col-md-5">
+      <div class="inner">
+        <img [src]="details.frontMatter.images" class="rounded-3 w-100 h-100 insight-img" [alt]="details.frontMatter.title">
+      </div>
+    </div>
+    <div class="col-md-7">
+      <div class="inner mt-3 d-flex flex-column justify-content-center h-100">
+        <h2>{{details.frontMatter.title}}</h2>
+        <p class="text-muted pb-5 border-bottom">{{details.frontMatter.summary}}</p>
+        <button class="w-fit-content button-donate mt-5">
+          <span class="button-content">Schedule Appointment</span>
+        </button>
+    </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="inner auther-container py-5">
+        <h2>Auther</h2>
+        <div class="innerAuther d-flex align-items-center justify-content-center">
+          <img src="https://midcare.netlify.app/img/author/ahmedgodaa.webp" class="autherImg" alt="Auther">
+        </div>
+        <div class="Authertext text-center">
+          <h3 class="m-0">Ahmed Godaa</h3>
+          <p class="text-muted" >Software Engineer</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="py-5">
+    <div class="container-fluid ">
+      <div class="d-flex align-items-center justify-content-between mb-3" >
+        <h2 class="h2-title">More Insight</h2>
+          <button (click)="allInsight()" class="cta">
+            <span>See All</span>
+            <svg width="15px" height="10px" viewBox="0 0 13 10">
+              <path d="M1,5 L11,5"></path>
+              <polyline points="8 1 12 5 8 9"></polyline>
+            </svg>
+          </button>
+      </div>
+    </div>
+    <owl-carousel-o [options]="insightOptions">
+      <ng-container *ngFor="let slide of insight.slice(0,6)">
+          <ng-template  carouselSlide>
+            <div role="button" class="p-2 mx-2 slider-img-container" [routerLink]="['/insightdetails' , slide.id]">
+              <img [src]="slide.frontMatter.images" class="w-100" [alt]="slide.frontMatter.title">
+              <h3  class="mb-0 pt-2 text-truncate">{{slide.frontMatter.title}}</h3>
+              <p class="text-truncate text-muted" >{{slide.frontMatter.summary}}</p>
+            </div>
+          </ng-template>
+      </ng-container>
+    </owl-carousel-o>
+  </div>
+</div>

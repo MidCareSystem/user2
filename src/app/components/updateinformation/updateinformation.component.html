@@ -1,0 +1,106 @@
+<div class="user bg-main pt-5 pb-3">
+  <div class="container bg-white my-5 p-4 rounded-3">
+    <div class="row px-4 overflow-hidden">
+      <div class="col-lg-4">
+        <img role="button" [src]="userInfo.imageUrl" class="w-100 rounded-3" [alt]="userInfo.firstname">
+        <input class="mt-4 ps-0" type="file" (change)="onSelected($event)">
+        <button (click)="onUpload()" class="w-fit-content button-donate d-block me-auto mt-4">
+          <span class="button-content">Update Photo</span>
+        </button>
+      </div>
+      <div class="col-lg-8">
+        <div class="inner py-4">
+          <form (ngSubmit)="handleUpdate()"  [formGroup]="updateUser" class="d-flex flex-column gap-2">
+            <div>
+              <label for="fname">First name</label>
+              <div class="input-container">
+                <input formControlName="firstname" class="form-control input-container" id="fname" type="text" placeholder="Enter Your First Name">
+                <i class=" input-icon fa-solid fa-person"></i>
+              </div>
+              <div *ngIf="updateUser.get('firstname')?.errors && updateUser.get('firstname')?.touched" class="alert alert-danger mt-1" >
+                <p *ngIf="updateUser.get('firstname')?.getError('required')" >Required</p>
+              </div>
+            </div>
+            <div>
+              <label for="lname">Last name</label>
+              <div class="input-container">
+                <input formControlName="lastname" class="form-control input-container" id="lname" type="text" placeholder="Enter Your Last Name">
+                <i class=" input-icon fa-solid fa-person-rays"></i>
+              </div>
+              <div *ngIf="updateUser.get('lastname')?.errors && updateUser.get('lastname')?.touched" class="alert alert-danger mt-1" >
+                <p *ngIf="updateUser.get('lastname')?.getError('required')" >Required</p>
+              </div>
+            </div>
+            <div>
+              <label for="country">Country</label>
+              <div class="input-container">
+                <input formControlName="country" class="form-control input-container" id="country" type="text" placeholder="Enter Your Country">
+                <i class="input-icon fa-solid fa-earth-americas"></i>
+              </div>
+              <div *ngIf="updateUser.get('country')?.errors && updateUser.get('country')?.touched" class="alert alert-danger mt-1" >
+                <p *ngIf="updateUser.get('country')?.getError('required')" >Required</p>
+              </div>
+            </div>
+            <div>
+              <label for="city">City</label>
+              <div class="input-container">
+                <input formControlName="city" class="form-control input-container" id="city" type="text" placeholder="Enter Your City">
+                <i class="input-icon fa-solid fa-earth-europe"></i>
+              </div>
+              <div *ngIf="updateUser.get('city')?.errors && updateUser.get('city')?.touched" class="alert alert-danger mt-1" >
+                <p *ngIf="updateUser.get('city')?.getError('required')" >Required</p>
+              </div>
+            </div>
+            <div>
+              <label for="bloodType">Blood Type</label>
+              <div class="input-container">
+                <input formControlName="bloodType" class="form-control input-container" id="bloodType" type="text" placeholder="Enter Your Blood Type">
+                <i class="input-icon fa-solid fa-hand-holding-droplet"></i>
+              </div>
+              <div *ngIf="updateUser.get('bloodType')?.errors && updateUser.get('bloodType')?.touched" class="alert alert-danger mt-1" >
+                <p *ngIf="updateUser.get('bloodType')?.getError('required')" >Required</p>
+              </div>
+            </div>
+            <div>
+              <label>Gender</label>
+              <div class="d-flex gap-3 mt-2">
+                <div>
+                  <input formControlName="gender" class="me-1" id="male" type="radio" name="gender" value="male">
+                  <label for="male">Male</label>
+                </div>
+                <div>
+                  <input formControlName="gender" class="me-1" id="female" type="radio" name="gender" value="female">
+                  <label for="female">Female</label>
+                </div>
+              </div>
+              <div *ngIf="updateUser.get('gender')?.errors && updateUser.get('gender')?.touched" class="alert alert-danger mt-1" >
+                <p *ngIf="updateUser.get('gender')?.getError('required')" >Required</p>
+              </div>
+            </div>
+            <div class="mt-2">
+              <label for="phone">Phone</label>
+              <div class="input-container">
+                <input formControlName="phone" class="form-control input-container" id="phone" type="number" placeholder="Enter Your Phone">
+                <i class="input-icon fa-solid fa-mobile-button"></i>
+              </div>
+              <div *ngIf="updateUser.get('phone')?.errors && updateUser.get('phone')?.touched" class="alert alert-danger mt-1" >
+                <p *ngIf="updateUser.get('phone')?.getError('required')" >Required</p>
+              </div>
+            </div>
+            <div>
+              <label for="date">Birth Date</label>
+              <div class="input-container">
+                <input formControlName="dob" class="form-control input-container" id="date" type="date">
+                <i class="input-icon fa-solid fa-cake-candles"></i>
+              </div>
+              <div *ngIf="updateUser.get('dob')?.errors && updateUser.get('dob')?.touched" class="alert alert-danger mt-1" >
+                <p *ngIf="updateUser.get('dob')?.getError('required')" >Required</p>
+              </div>
+            </div>
+            <button routerLink="/user" [disabled]="updateUser.invalid" class="btn btn-color w-fit-content ms-auto px-3" >Update<span *ngIf="isloading" ><i class="fa-solid fa-spinner fa-spin-pulse"></i></span></button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,5 +1,5 @@
-<div class="row" >
-  <div class="col-md-4 ">
+<div class="row pt-5" >
+  <div class="col-lg-4 col-md-6 inputs">
     <div class="p-3">
       <form [formGroup]="registerForm" (ngSubmit)="handleform()">
         <div class="mb-3" >
@@ -71,8 +71,8 @@
             <p *ngIf="registerForm.get('phone')?.getError('pattern')">Invalid phone number</p>
           </div>
         </div>
-        <button class="btn btn-color mt-3 w-100" [disabled]="registerForm.invalid">Register</button>
-        <!-- <p>{{}}</p> -->
+        <button class="btn btn-color mt-3 w-100" [disabled]="registerForm.invalid">Register <span *ngIf="isloading" ><i class="fa-solid fa-spinner fa-spin-pulse"></i></span></button>
+        <p class="mt-3 alert alert-danger text-center" *ngIf="exists" >{{exists}}</p>
           <div class="d-flex gap-2 fs-sm w-fit-content mx-auto mt-2 " >
             <p class="text-muted" > Do you already have an account?   </p>
             <a class="text-decoration-none" routerLink="/login">Sign in</a>
@@ -80,7 +80,7 @@
       </form>
     </div>
   </div>
-  <div class="col-md-8">
+  <div class="col-lg-8 img">
     <div>
       <img src="./assets/undraw_medicine_b1ol.png" class="w-100 " alt="">
     </div>

@@ -1,0 +1,103 @@
+<div class="user bg-main pt-5 pb-3">
+  <div class="container bg-white my-5 p-4 rounded-3">
+    <div class="row px-4 overflow-hidden">
+      <div class="col-lg-4">
+        <img [src]="userInfo.imageUrl" class="w-100 rounded-3 userImg" [alt]="userInfo.firstname">
+      </div>
+      <div class=" offset-lg-1  col-lg-7">
+        <div class="inner py-4">
+          <h2 class="d-flex align-items-center">{{userInfo.firstname}} {{userInfo.lastname}} <span class="ms-2 text-muted span-location" > <i class="fa-solid fa-location-dot me-1"></i>{{userInfo.country}}-{{userInfo.city}}</span></h2>
+          <p class="text-muted mt-3" ><a class="text-decoration-none text-muted" href="mailto:{{userInfo.email}}">{{userInfo.email}}</a></p>
+          <h3 class="about-user" ><i class="fa-solid fa-user me-2"></i>About</h3>
+          <div class="pt-4">
+            <ul class="list-unstyled" >
+              <li class="mb-3">
+                <div class="row">
+                  <div class="col-3">
+                    <span class="fw-bolder">Name :</span>
+                  </div>
+                  <div class="col-9">
+                    <span class="fw-medium">{{userInfo.firstname}} {{userInfo.lastname}}</span>
+                  </div>
+                </div>
+              </li>
+              <li class="mb-3">
+                <div class="row">
+                  <div class="col-3">
+                    <span class="fw-bolder">User Name :</span>
+                  </div>
+                  <div class="col-9">
+                    <span class="fw-medium">{{userInfo.username}}</span>
+                  </div>
+                </div>
+              </li>
+              <li class="mb-3">
+                <div class="row">
+                  <div class="col-3">
+                    <span class="fw-bolder">Gender :</span>
+                  </div>
+                  <div class="col-9">
+                    <span class="fw-medium">{{userInfo.gender}}</span>
+                  </div>
+                </div>
+              </li>
+              <li class="mb-3">
+                <div class="row">
+                  <div class="col-3">
+                    <span class="fw-bolder">Address :</span>
+                  </div>
+                  <div class="col-9">
+                    <span class="fw-medium">{{userInfo.country}}-{{userInfo.city}}</span>
+                  </div>
+                </div>
+              </li>
+              <li class="mb-3">
+                <div class="row">
+                  <div class="col-3">
+                    <span class="fw-bolder">Email :</span>
+                  </div>
+                  <div class="col-9">
+                    <span class="fw-medium"><a class="text-decoration-none" href="mailto:{{userInfo.email}}">{{userInfo.email}}</a></span>
+                  </div>
+                </div>
+              </li>
+              <li class="mb-3">
+                <div class="row">
+                  <div class="col-3">
+                    <span class="fw-bolder">Phone :</span>
+                  </div>
+                  <div class="col-9">
+                    <span class="fw-medium"><a class="text-decoration-none" href="tel:+{{userInfo.phone}}">{{userInfo.phone}}</a></span>
+                  </div>
+                </div>
+              </li>
+              <li class="mb-3">
+                <div class="row">
+                  <div class="col-3">
+                    <span class="fw-bolder">Blood Type :</span>
+                  </div>
+                  <div class="col-9">
+                    <span class="fw-medium">{{userInfo.bloodType}}</span>
+                  </div>
+                </div>
+              </li>
+              <li class="mb-3">
+                <div class="row">
+                  <div class="col-3">
+                    <span class="fw-bolder">Birth Date :</span>
+                  </div>
+                  <div class="col-9">
+                    <span class="fw-medium">{{userInfo.dob}}</span>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <button routerLink="/updateinformation" class="w-fit-content button-donate d-block ms-auto mt-4">
+            <span class="button-content">Update Info</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

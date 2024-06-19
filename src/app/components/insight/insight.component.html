@@ -1,0 +1,17 @@
+<div class="insight">
+  <div class="container" >
+    <div class="input-container search w-50 m-auto py-4">
+      <input type="search"  [(ngModel)]="term" class="form-control" placeholder="search...."/>
+      <i class="input-icon fa-solid fa-magnifying-glass"></i>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-4" *ngFor="let slide of insight | search:term ">
+        <div class="inner" role="button" [routerLink]="['/insightdetails' , slide.id]">
+          <img [src]="slide.frontMatter.images" class="w-100" [alt]="slide.frontMatter.title">
+          <h3  class="mb-0 pt-2 text-truncate">{{slide.frontMatter.title}}</h3>
+          <p class="text-truncate text-muted" >{{slide.frontMatter.description}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

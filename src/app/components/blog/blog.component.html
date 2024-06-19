@@ -1,0 +1,21 @@
+<div class="blog">
+  <div class="container" >
+    <div class="input-container search w-50 m-auto py-4">
+      <input type="search"  [(ngModel)]="term" class="form-control" placeholder="search...."/>
+      <i class="input-icon fa-solid fa-magnifying-glass"></i>
+    </div>
+    <div class="row g-4">
+      <div class="col-lg-4 col-md-6" *ngFor="let slide of blog | search:term ">
+        <div class="inner" role="button" [routerLink]="['/blogdetails' , slide.id]">
+          <div class="p-2 mx-2 slider-img-container-blog position-relative" >
+            <img class="w-100 " [src]="slide.frontMatter.images" [alt]="slide.frontMatter.title" [title]="slide.frontMatter.title">
+            <h4 class="text-black category-info" >{{slide.frontMatter.category}}</h4>
+            <h3 class="fw-bolder text-truncate text-black slider-h3 mt-2 mb-1">{{slide.frontMatter.title}}</h3>
+            <p class=" text-truncate text-muted" >{{slide.frontMatter.summary}}</p>
+            <p class="position-absolute alert bg-main py-1 px-2 date">{{slide.frontMatter.date.slice(0,10)}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

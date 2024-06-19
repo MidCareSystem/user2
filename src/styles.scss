@@ -1,15 +1,52 @@
 /* You can add global styles to this file, and also import other style files */
 @import url('https://fonts.googleapis.com/css2?family=Encode+Sans+Expanded:wght@100;200;300;400;500;600;700;800;900&family=Manrope:wght@200..800&display=swap');
+@import 'ngx-owl-carousel-o/lib/styles/scss/owl.carousel';
+@import 'ngx-owl-carousel-o/lib/styles/scss/owl.theme.default';
+@import 'ngx-toastr/toastr';
 
 *{
   font-family: "Encode Sans Expanded", sans-serif;
 }
-
+.main-color{
+  color: #000000;
+}
+.main-light-color{
+  color: #32ace0;
+}
+.bg-main{
+  background-color: #32ace0;
+}
+.main-btn{
+  padding:8px 14px;
+  border-radius: 5px;
+  background-color:#32ace0;
+  color:#4b4b4b;
+  overflow: hidden;
+  border: .5px solid #32ace0;
+}
+.active-link{
+  background-color: #32ace0;
+  padding: 5px 0.5rem;
+  color: #fff !important;
+  border-radius: 5px;
+  &:hover{
+    background-color: #75ccf1;
+    transition: color .4s;
+}
+}
+.nav-link{
+  padding: 5px 0.5rem !important;
+  border-radius: 5px !important;
+  transition: color .4s step-start,background-color .4s ease-in-out;
+}
 .fs-sm{
   font-size: 14px;
 }
 .w-fit-content{
   width: fit-content;
+}
+.cursor-pointer{
+  cursor: pointer;
 }
 input::placeholder{
   font-size: 14px;
@@ -20,8 +57,22 @@ input{
 }
 label{
   font-size: 15px;
-  font-weight: 600;
+  font-weight: 500;
+}
+.form-control{
+  &:focus{
+    box-shadow: none;
+  }
 }
 p{
   margin-bottom: 0 !important;
+}
+
+@media screen and (max-width: 992px) {
+  .img{
+    display: none;
+  }
+  .inputs{
+    margin: auto;
+  }
 }
