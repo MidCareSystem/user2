@@ -22,9 +22,11 @@ export class AppService {
   insightApi():Observable<any>{
     return this._HttpClient.get( this.baseUrl + 'user/insight/getAll')
   }
+  
   emergencyApi():Observable<any>{
     return this._HttpClient.get( this.baseUrl + 'emergency/getAll')
   }
+
   bloodBagApi():Observable<any>{
     return this._HttpClient.get( this.baseUrl + 'user/bag/getAll')
   }
