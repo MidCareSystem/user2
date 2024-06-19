@@ -10,7 +10,7 @@ export class AppService {
 
   constructor(private _HttpClient:HttpClient) { }
 
-  baseUrl:string = "http://localhost:8081/"
+  baseUrl:string = "https://midcare-v1-0-5.onrender.com/"
   hospitalApi():Observable<any>{
     return this._HttpClient.get( this.baseUrl + 'user/hospital/getAll')
   }
