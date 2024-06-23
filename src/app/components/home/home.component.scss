@@ -115,7 +115,7 @@
   margin-top: 61px;
   background-image: url('/assets/bg-main.jpg');
   background-size: cover;
-  background-position:center ;
+  background-position:center center;
   background-repeat: no-repeat;
   min-height: 100vh;
 }
@@ -239,6 +239,12 @@
   }
   .gallary-img{
     height: 265px;
+  }
+  .text-main{
+    font-size: 30px;
+  }
+  .main-p{
+    font-size: 15px;
   }
 }
 @media screen and (max-width: 778px) {

@@ -1,0 +1,17 @@
+.bg
+{
+  min-height: 100vh;
+  background-image: url(../../../assets/page-not-found.png);
+  background-position: center center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.btn-color{
+  background-color: black;
+  color: #fff;
+  height: fit-content;
+  &:focus{
+    background-color: black;
+    color: #fff;
+  }
+}

@@ -1,0 +1,19 @@
+<div class="container py-5" >
+  <form (ngSubmit)="sendCode()" [formGroup]="verifyCode" class="p-5 forgetPassword w-75 mx-auto" >
+    <div>
+      <label for="Code">Code :</label>
+      <div class="input-container mt-2">
+        <input formControlName="oobCode" class="form-control input-container" id="Code" type="number" placeholder="Enter Your Code">
+        <i class="input-icon fa-regular fa-envelope"></i>
+      </div>
+    </div>
+    <div>
+      <label for="newPassword">New Password :</label>
+      <div class="input-container mt-2">
+        <input formControlName="newPassword" class="form-control input-container" id="newPassword" type="password" placeholder="Enter Your New Password">
+        <i class="input-icon fa-regular fa-envelope"></i>
+      </div>
+    </div>
+    <button  class="btn btn-color mt-3" (click)="sendCode()" >verify</button>
+  </form>
+</div>
