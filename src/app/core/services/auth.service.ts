@@ -31,4 +31,12 @@ export class AuthService {
     }
     return this._HttpClient.post( this.baseUrl + `/auth/refreshToken`, model)
   }
+
+  resetPassword(email:string):Observable<any>{
+    return this._HttpClient.post( this.baseUrl + `/auth/password/sendCode?email=${email}`, email)
+  }
+
+  verifyCode(model:object):Observable<any>{
+    return this._HttpClient.post( this.baseUrl + `/auth/password/reset`, model)
+  }
 }

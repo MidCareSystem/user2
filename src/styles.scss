@@ -55,6 +55,9 @@ input::placeholder{
 input{
   padding-left: 30px !important;
 }
+select{
+  padding-left: 30px !important;
+}
 label{
   font-size: 15px;
   font-weight: 500;
@@ -67,7 +70,6 @@ label{
 p{
   margin-bottom: 0 !important;
 }
-
 @media screen and (max-width: 992px) {
   .img{
     display: none;

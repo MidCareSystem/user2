@@ -1,0 +1,46 @@
+<div class="appointment py-5">
+  <div class="container">
+    <form (ngSubmit)="handelAppointment()" [formGroup]="appointment" class="w-75 mx-auto">
+      <div>
+        <label for="conNumber"> Contact Number : </label>
+        <div class="input-container mt-2">
+          <input formControlName="contactNumber" class="form-control input-container" id="conNumber" type="number" placeholder="Contact Number">
+          <i class="input-icon fa-solid fa-mobile"></i>
+        </div>
+      </div>
+      <div>
+        <label for="date"> Date Of Donation : </label>
+        <div class="input-container mt-2">
+          <input formControlName="appointmentDate" class="form-control input-container" id="date" type="date" placeholder="Contact Number">
+          <i class="input-icon fa-regular fa-calendar-days"></i>
+        </div>
+      </div>
+      <div>
+        <label for="type"> Type : </label>
+        <div class="input-container mt-2">
+          <input formControlName="appointmentType" class="form-control input-container" id="type" value="Blood Donation" type="text" >
+          <i class="input-icon fa-solid fa-tape"></i>
+        </div>
+      </div>
+      <div>
+        <label for="emergency"> Emergency : </label>
+        <div class="input-container">
+          <select formControlName="emergencyId"  id="emergency" class="form-control" >
+            <option *ngFor="let slide of emergency" [value]="slide.id">{{slide.frontMatter.title}}</option>
+          </select>
+          <i class="input-icon fa-solid fa-truck-medical"></i>
+        </div>
+      </div>
+      <div>
+      <label for="hospital">hospital :</label>
+      <div class="input-container">
+        <select formControlName="hospitalId"  id="hospital" name="hospital" class="form-control" >
+          <option *ngFor="let slide of hospital" [value]="slide.id">{{slide.frontMatter.title}}</option>
+        </select>
+        <i class="input-icon  fa-solid fa-hospital"></i>
+      </div>
+      <button class="btn btn-color w-fit-content ms-auto px-3 " >Transfer</button>
+    </div>
+    </form>
+  </div>
+</div>

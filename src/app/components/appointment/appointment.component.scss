@@ -1,0 +1,24 @@
+.input-container {
+  position: relative;
+  margin-bottom: 15px;
+}
+.input-icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 10px;
+  color: #000000;
+  font-size: 14px;
+}
+.appointment{
+  margin-top: 61px;
+}
+.btn-color{
+  margin-top:12px;
+  background-color: black;
+  color: #fff;
+  &:focus{
+    background-color: black;
+    color: #fff;
+  }
+}

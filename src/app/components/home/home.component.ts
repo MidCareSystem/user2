@@ -88,11 +88,11 @@ export class HomeComponent implements OnInit {
     dots: true,
     navSpeed: 700,
     responsive: {
-      0: {
-        items: 1
-      },
       400: {
         items: 1
+      },
+      500: {
+        items: 2
       },
       740: {
         items: 3
@@ -112,11 +112,11 @@ export class HomeComponent implements OnInit {
     dots: true,
     navSpeed: 400,
     responsive: {
-      0: {
-        items: 1
-      },
       400: {
         items: 1
+      },
+      500: {
+        items: 2
       },
       740: {
         items: 3
@@ -136,11 +136,11 @@ export class HomeComponent implements OnInit {
     dots: true,
     navSpeed: 200,
     responsive: {
-      0: {
-        items: 1
-      },
       400: {
         items: 1
+      },
+      500: {
+        items: 2
       },
       740: {
         items: 3

@@ -1,1 +1,27 @@
-<p>tickets works!</p>
+<div *ngIf="information.length > 0" class="ticket py-5" >
+  <div class="container" >
+    <div class="row g-4">
+      <div class="col-md-6" *ngFor="let slide of information"   >
+        <div class="inner" [routerLink]="['/transfer' , slide.id ]">
+          <div class="row">
+            <div class="col-5 my-auto">
+              <img src="./assets/ticket-img.png" class="w-100 ms-2" >
+            </div>
+            <div class="col-7 my-auto">
+              <div class="inner1 p-3 ">
+                <h3 class="text-truncate mb-2" >Ticket Number: {{slide.id}} </h3>
+                <p class="text-muted text-truncate" >Owner Email: {{slide.ownerEmail}}</p>
+                <p class="text-muted text-truncate" >Donation Hospital: {{slide.hospitalName}}</p>
+                <p class="text-muted text-truncate" >Blood Type: {{slide.bloodType}}</p>
+                <p class="ticket-date" >{{slide.donationDate.slice(0,10)}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div *ngIf="information.length == 0" class="ticket py-5">
+  <h2 class="h1 text-center" >The Tickets Are Empty </h2>
+</div>

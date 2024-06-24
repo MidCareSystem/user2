@@ -1,0 +1,15 @@
+<div class="transfer py-5">
+  <div class="container">
+    <div class="mx-auto w-75">
+      <div class="input-container mt-2">
+        <input [(ngModel)]="userEmail" class="form-control input-container" id="Email" type="email" placeholder="Enter Reciever Email">
+        <i class="input-icon fa-regular fa-envelope"></i>
+      </div>
+      <div class="input-container mt-2">
+        <input class="form-control input-container" id="Email" [value]="ticketId" type="text">
+        <i class="input-icon fa-solid fa-id-card"></i>
+      </div>
+      <button (click)="transfer()" class="btn btn-color w-fit-content ms-auto px-3 " >Transfer</button>
+    </div>
+  </div>
+</div>

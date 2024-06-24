@@ -22,12 +22,22 @@ export class AppService {
   insightApi():Observable<any>{
     return this._HttpClient.get( this.baseUrl + 'user/insight/getAll')
   }
-  
+
   emergencyApi():Observable<any>{
     return this._HttpClient.get( this.baseUrl + 'emergency/getAll')
   }
 
-  bloodBagApi():Observable<any>{
-    return this._HttpClient.get( this.baseUrl + 'user/bag/getAll')
+  ticketApi():Observable<any>{
+    return this._HttpClient.get(this.baseUrl + 'user/tickets/myTickets' )
   }
+
+  transferTicket(id:string,email:string):Observable<any>{
+    return this._HttpClient.put(this.baseUrl + `user/tickets/transfer?id=${id}&newOwnerEmail=${email}`, id )
+  }
+
+  appointment(model:any):Observable<any>{
+    return this._HttpClient.post(this.baseUrl + `user/appointments/create`, model )
+  }
+
+
 }
